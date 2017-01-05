@@ -16,7 +16,7 @@ var _moment = require('moment');
 
 var _moment2 = _interopRequireDefault(_moment);
 
-require('./Timeline.css');
+require('./Timeline.scss');
 
 var _Items = require('./items/Items');
 
@@ -63,6 +63,8 @@ var defaultKeys = {
   groupTitleKey: 'title',
   itemIdKey: 'id',
   itemTitleKey: 'title',
+  itemExtraKey: 'extra',
+  itemSelectedExtraKey: 'selected_extra',
   itemDivTitleKey: 'title',
   itemGroupKey: 'group',
   itemTimeStartKey: 'start_time',

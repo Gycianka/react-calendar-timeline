@@ -13,7 +13,6 @@
 .react-calendar-timeline .rct-canvas {
   position: relative; }
 .react-calendar-timeline .rct-items .rct-item {
-  overflow: hidden;
   position: absolute;
   box-sizing: border-box;
   font-size: 12px;
@@ -72,10 +71,8 @@
     width: 100%;
     height: 100%;
     padding: 0;
-    margin: 0;
-    overflow: hidden; }
+    margin: 0; }
     .react-calendar-timeline .rct-items .rct-item .rct-item-overflow:hover {
-      overflow: visible;
       z-index: 10; }
     .react-calendar-timeline .rct-items .rct-item .rct-item-overflow .rct-item-content {
       white-space: nowrap;
@@ -84,7 +81,16 @@
       border-radius: 2px;
       left: 0;
       padding: 0 6px;
-      height: 100%; }
+      height: 100%;
+      width: 100%; }
+      .react-calendar-timeline .rct-items .rct-item .rct-item-overflow .rct-item-content .rct-item-content-extra {
+        background-color: #FF9800;
+        margin: auto; }
+      .react-calendar-timeline .rct-items .rct-item .rct-item-overflow .rct-item-content > p {
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+        text-overflow: "..."; }
 .react-calendar-timeline .rct-header {
   margin: 0; }
   .react-calendar-timeline .rct-header .rct-label-group {

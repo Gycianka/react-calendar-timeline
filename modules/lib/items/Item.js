@@ -115,6 +115,9 @@ var Item = function (_Component) {
     value: function cacheDataFromProps(props) {
       this.itemId = (0, _utils._get)(props.item, props.keys.itemIdKey);
       this.itemTitle = (0, _utils._get)(props.item, props.keys.itemTitleKey);
+      this.itemExtra = (0, _utils._get)(props.item, props.keys.itemExtraKey);
+      this.itemSelectedExtra = (0, _utils._get)(props.item, props.keys.itemSelectedExtraKey);
+
       this.itemDivTitle = props.keys.itemDivTitleKey ? (0, _utils._get)(props.item, props.keys.itemDivTitleKey) : this.itemTitle;
       this.itemTimeStart = (0, _utils._get)(props.item, props.keys.itemTimeStartKey);
       this.itemTimeEnd = (0, _utils._get)(props.item, props.keys.itemTimeEndKey);
@@ -480,7 +483,16 @@ var Item = function (_Component) {
           _react2.default.createElement(
             'div',
             { className: 'rct-item-content' },
-            this.itemTitle
+            _react2.default.createElement(
+              'p',
+              null,
+              this.itemTitle
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'rct-item-content-extra' },
+              !this.props.selected ? this.itemExtra : this.itemSelectedExtra
+            )
           )
         ),
         this.props.useResizeHandle ? _react2.default.createElement('div', { ref: 'dragRight', className: 'rct-drag-right' }) : ''
