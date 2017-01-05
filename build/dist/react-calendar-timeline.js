@@ -137,6 +137,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	  groupTitleKey: 'title',
 	  itemIdKey: 'id',
 	  itemTitleKey: 'title',
+	  itemExtraKey: 'extra',
+	  itemSelectedExtraKey: 'selected_extra',
 	  itemDivTitleKey: 'title',
 	  itemGroupKey: 'group',
 	  itemTimeStartKey: 'start_time',
@@ -1198,12 +1200,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	// import ItemGroup from './ItemGroup'
 	
 	var canResizeLeft = function canResizeLeft(item, canResize) {
-	  var value = (0, _utils._get)(item, 'canResize') !== undefined ? (0, _utils._get)(item, 'canResize') : undefined.props.canResize;
+	  var value = (0, _utils._get)(item, 'canResize') !== undefined ? (0, _utils._get)(item, 'canResize') : canResize;
 	  return value === 'left' || value === 'both';
 	};
 	
 	var canResizeRight = function canResizeRight(item, canResize) {
-	  var value = (0, _utils._get)(item, 'canResize') !== undefined ? (0, _utils._get)(item, 'canResize') : undefined.props.canResize;
+	  var value = (0, _utils._get)(item, 'canResize') !== undefined ? (0, _utils._get)(item, 'canResize') : canResize;
 	  return value === 'right' || value === 'both' || value === true;
 	};
 	
@@ -1462,6 +1464,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	    value: function cacheDataFromProps(props) {
 	      this.itemId = (0, _utils._get)(props.item, props.keys.itemIdKey);
 	      this.itemTitle = (0, _utils._get)(props.item, props.keys.itemTitleKey);
+	      this.itemExtra = (0, _utils._get)(props.item, props.keys.itemExtraKey);
+	      this.itemSelectedExtra = (0, _utils._get)(props.item, props.keys.itemSelectedExtraKey);
+	
 	      this.itemDivTitle = props.keys.itemDivTitleKey ? (0, _utils._get)(props.item, props.keys.itemDivTitleKey) : this.itemTitle;
 	      this.itemTimeStart = (0, _utils._get)(props.item, props.keys.itemTimeStartKey);
 	      this.itemTimeEnd = (0, _utils._get)(props.item, props.keys.itemTimeEndKey);
@@ -1827,7 +1832,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	          _react2.default.createElement(
 	            'div',
 	            { className: 'rct-item-content' },
-	            this.itemTitle
+	            _react2.default.createElement(
+	              'p',
+	              null,
+	              this.itemTitle
+	            ),
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'rct-item-content-extra' },
+	              !this.props.selected ? this.itemExtra : this.itemSelectedExtra
+	            )
 	          )
 	        ),
 	        this.props.useResizeHandle ? _react2.default.createElement('div', { ref: 'dragRight', className: 'rct-drag-right' }) : ''
