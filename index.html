@@ -45,6 +45,8 @@
         id: i+'',
         group: faker.random.number({min: 1, max: groups.length})+'',
         title: faker.hacker.phrase(),
+        selected_extra: 'Selected extra',
+        extra: 'Default extra',
         start: startValue,
         end: endValue,
         canMove: startValue > new Date().getTime(),
@@ -85,6 +87,8 @@
         itemIdKey: 'id',
         itemTitleKey: 'title',
         itemDivTitleKey: 'title',
+        itemExtraKey: 'extra',
+        itemSelectedExtraKey: 'selected_extra',
         itemGroupKey: 'group',
         itemTimeStartKey: 'start',
         itemTimeEndKey: 'end'

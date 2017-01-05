@@ -17,6 +17,8 @@ const defaultKeys = {
   groupTitleKey: 'title',
   itemIdKey: 'id',
   itemTitleKey: 'title',
+  itemExtraKey: 'extra',
+  itemSelectedExtraKey: 'selected_extra',
   itemDivTitleKey: 'title',
   itemGroupKey: 'group',
   itemTimeStartKey: 'start_time',
